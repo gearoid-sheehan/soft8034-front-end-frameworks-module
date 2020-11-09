@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 text-center">
+            <div *ngIf="choiceMade; else elseBlock">
+                <img class="handImg" src="{{imagesHands[userChoice]}}">
+            </div>
+            <ng-template #elseBlock>
+                <img class="qMrk" src="assets/images/question_mark.png">
+            </ng-template>
+        </div>
+        <div class="col-4 text-center handArea">
+            <div *ngIf="playPressed">
+                <div class="row justify-content-center">
+                    <img class="handImgTop" src="{{imageShownHand}}">
+                </div>
+                <div class="row justify-content-center">
+                    <img class="handFontTop" src="{{imageShownFont}}">
+                </div>
+            </div>
+        </div>
+        <div class="col-4 text-center handArea">
+            <div *ngIf="isActive; else elseBlock">
+                <img class="handImg" src="{{imagesHands[randomCount]}}">
+            </div>
+            <ng-template #elseBlock>
+                <img class="qMrk" src="assets/images/question_mark.png">
+            </ng-template>
+        </div>
+    </div>
+
+    <!-- Row with Images of each players chosen hand and the round and scores -->
+    <div class="row">
+        <div class="col-4 text-center">
+            <div class="row justify-content-center">
+                <span class="text-light p-2 smSpn">GEAROID</span>
+            </div>
+            <div class="row justify-content-center">
+                <span class="text-light smSpn">Selection:</span>
+                <select [(ngModel)]="handSelected">
+                    <option *ngFor="let handChoice of handChoices" [ngValue]="handChoice" (click)="showChoice()">{{handChoice.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-4">
+            <div id="wBoardImg" class="p-4">
+                <div class="row justify-content-center">
+                    <span class="text-light lgSpn">Round {{round}}</span>
+                </div>
+                <div class="row justify-content-center">
+                    <span class="text-light lgSpn">{{userScore}} - {{pcScore}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row justify-content-center">
+                <span class="text-light p-2 smSpn">PC</span>
+            </div>
+            <div class="row justify-content-center">
+                <span class="text-light smSpn">Selection: </span>
+                <div *ngIf="isActive; else qMark">
+                    <span class="text-light smSpn">{{this.handChoices[this.randomCount].name}}</span>
+                </div>
+                <ng-template #qMark>
+                    <span class="text-light smSpn">?</span>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row with Reset and Play buttons -->
+    <div class="row text-center">
+        <div class="col-6">
+            <button type="button" class="btn bg-light float-right m-3" (click)="reset()">RESET</button>
+        </div>
+        <div class="col-4">
+            <button type="button" class="btn bg-success float-left m-3" (click)="play()">PLAY</button>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-danger float-right m-3" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</div>

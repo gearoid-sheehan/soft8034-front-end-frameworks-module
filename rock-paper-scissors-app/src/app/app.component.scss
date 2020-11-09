@@ -1,0 +1,9 @@
+.backgroundImg {
+    position: relative;
+    background-image: url('/assets/images/wooden_background_img.jpg');
+    background-size: cover;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+}

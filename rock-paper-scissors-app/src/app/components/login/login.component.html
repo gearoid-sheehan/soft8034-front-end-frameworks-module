@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="container">
+        <div class="row justify-content-center p-5">
+            <div class="jumbotron jTron">
+                <h2>Login</h2>
+                <form #loginForm="ngForm" (ngSubmit)="login()">
+                    <input type="email" class="form-control loginInput" name="username" placeholder="Email" required [(ngModel)]="user.email">
+                    <input type="password" class="form-control loginInput" name="password" placeholder="Password" required [(ngModel)]="user.password">
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                            <button [disabled]="!loginForm.valid" type="submit" class="btn btn-success" >Login</button>
+                        </div>
+                        <div class="col-6">
+                            <a id="passwordReset" href="">Forgot Password?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
