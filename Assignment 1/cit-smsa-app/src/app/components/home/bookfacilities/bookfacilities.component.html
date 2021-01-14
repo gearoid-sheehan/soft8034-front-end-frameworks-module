@@ -1,0 +1,124 @@
+<div class="backgroundImg">
+    <div class="container">
+        <div class="container">
+            <div class="row itemsBlock justify-content-center">
+                <div class="col bookFacilitiesCard bg-light">
+                    <div class="row bookFacilitiesHeader">
+                        <span class="container text-light h1 clubTitle">Book Facilities</span>
+                    </div>
+                    <div class="container userBookingCont">
+                        <div class="row">
+                            <div class="col">
+                                 <!-- Title Form Input -->
+                                 <div class="form-group">
+                                      <label for="title">Title</label>
+                                      <input id="title" class="form-control" placeholder="Title" required type="text" [(ngModel)]="newBooking.title" #title="ngModel" name="title" minlength="5" maxlength="20">
+                                      <div class="alert alert-danger" *ngIf="title.touched && !title.valid">
+                                           <div *ngIf="title.errors.required">Title is a required field</div>
+                                           <div *ngIf="title.errors.minlength">Title should be a minimum of 5 characters</div>
+                                           <div *ngIf="title.errors.maxlength">Title should be a maximum of 20 characters</div>
+                                      </div>
+                                 </div>
+
+                                <!-- Image Form Input -->
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input id="image" class="form-control" placeholder="Image" required type="text" [(ngModel)]="newBooking.img" #image="ngModel" name="image" minlength="5" maxlength="20">
+                                    <div class="alert alert-danger" *ngIf="image.touched && !image.valid">
+                                        <div *ngIf="image.errors.required">Image is a required field</div>
+                                        <div *ngIf="image.errors.minlength">Image should be a minimum of 5 characters</div>
+                                        <div *ngIf="image.errors.maxlength">Image should be a maximum of 20 characters</div>
+                                    </div>
+                                </div>
+
+                                <!-- Time Form Input -->
+                                <div class="form-group">
+                                    <label for="time">Time</label>
+                                    <input id="time" class="form-control" placeholder="Time" required type="text" [(ngModel)]="newBooking.time" #time="ngModel" name="time" minlength="5" maxlength="20">
+                                    <div class="alert alert-danger" *ngIf="time.touched && !time.valid">
+                                        <div *ngIf="time.errors.required">Time is a required field</div>
+                                        <div *ngIf="time.errors.minlength">Time should be a minimum of 5 characters</div>
+                                        <div *ngIf="time.errors.maxlength">Time should be a maximum of 20 characters</div>
+                                    </div>
+                                </div>
+
+                                <!-- Date Form Input -->
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input id="date" class="form-control" placeholder="Date" required type="text" [(ngModel)]="newBooking.date" #date="ngModel" name="date" minlength="5" maxlength="20">
+                                    <div class="alert alert-danger" *ngIf="date.touched && !date.valid">
+                                        <div *ngIf="date.errors.required">Date is a required field</div>
+                                        <div *ngIf="date.errors.minlength">Date should be a minimum of 5 characters</div>
+                                        <div *ngIf="date.errors.maxlength">Date should be a maximum of 20 characters</div>
+                                    </div>
+                                </div>
+
+                                <!-- Venue Form Input -->
+                                <div class="form-group">
+                                    <label for="venue">Venue</label>
+                                    <input id="venue" class="form-control" placeholder="Venue" required type="text" [(ngModel)]="newBooking.venue" #venue="ngModel" name="venue" minlength="5" maxlength="20">
+                                    <div class="alert alert-danger" *ngIf="venue.touched && !venue.valid">
+                                        <div *ngIf="venue.errors.required">Venue is a required field</div>
+                                        <div *ngIf="venue.errors.minlength">Venue should be a minimum of 5 characters</div>
+                                        <div *ngIf="venue.errors.maxlength">Venue should be a maximum of 20 characters</div>
+                                    </div>
+                                </div>
+
+                                </div>
+
+                                <div class="col">
+
+                                    <!-- Trainer Form Input -->
+                                    <div class="form-group">
+                                        <label for="trainer">Trainer</label>
+                                        <input id="trainer" class="form-control" placeholder="Trainer" required type="text" [(ngModel)]="newBooking.trainer" #trainer="ngModel" name="trainer" minlength="5" maxlength="20">
+                                        <div class="alert alert-danger" *ngIf="trainer.touched && !trainer.valid">
+                                            <div *ngIf="trainer.errors.required">Trainer is a required field</div>
+                                            <div *ngIf="trainer.errors.minlength">Trainer should be a minimum of 5 characters</div>
+                                            <div *ngIf="trainer.errors.maxlength">Trainer should be a maximum of 20 characters</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Length Form Input -->
+                                    <div class="form-group">
+                                        <label for="length">Length</label>
+                                        <input id="length" class="form-control" placeholder="Length" required type="number" [(ngModel)]="newBooking.length" #length="ngModel" name="length" minlength="5" maxlength="20">
+                                        <div class="alert alert-danger" *ngIf="length.touched && !length.valid">
+                                            <div *ngIf="length.errors.required">Length is a required field</div>
+                                            <div *ngIf="length.errors.minlength">Length should be a minimum of 5 characters</div>
+                                            <div *ngIf="length.errors.maxlength">Length should be a maximum of 20 characters</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Calories Burned Form Input -->
+                                    <div class="form-group">
+                                        <label for="caloriesBurned">Calories Burned</label>
+                                        <input id="caloriesBurned" class="form-control" placeholder="Calories Burned" required type="number" [(ngModel)]="newBooking.caloriesBurned" #caloriesBurned="ngModel" name="image" minlength="5" maxlength="20">
+                                        <div class="alert alert-danger" *ngIf="caloriesBurned.touched && !caloriesBurned.valid">
+                                            <div *ngIf="caloriesBurned.errors.required">Calories Burned is a required field</div>
+                                            <div *ngIf="caloriesBurned.errors.minlength">Calories Burned should be a minimum of 5 characters</div>
+                                            <div *ngIf="caloriesBurned.errors.maxlength">Calories Burned should be a maximum of 20 characters</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Max Size Form Input -->
+                                    <div class="form-group">
+                                        <label for="maxSize">Max Size</label>
+                                        <input id="maxSize" class="form-control" placeholder="Max Size" required type="number" [(ngModel)]="newBooking.maxSize" #maxSize="ngModel" name="maxSize" minlength="5" maxlength="20">
+                                        <div class="alert alert-danger" *ngIf="maxSize.touched && !maxSize.valid">
+                                            <div *ngIf="maxSize.errors.required">Max Size is a required field</div>
+                                            <div *ngIf="maxSize.errors.minlength">Max Size should be a minimum of 5 characters</div>
+                                            <div *ngIf="maxSize.errors.maxlength">Max Size should be a maximum of 20 characters</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Book Facility Form -->
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success" (click)="bookFacility()">Book</button>
+                                    </div>
+                                </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

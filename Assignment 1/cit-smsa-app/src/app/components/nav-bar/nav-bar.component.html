@@ -1,0 +1,44 @@
+<div id="navbar" class="container-fluid">
+  <div class="row">
+    <div class="col-1">
+      <img id="navLogo" src="assets/images/CIT ICON 2012 (REVERSE RED-RGB).jpg" onclick="this.blur();" routerLink="/home"/>
+    </div>
+
+    <div class="col-9">
+      <div class="row">
+        <h1 class="text-light">
+          SMSA
+        </h1>
+      </div>
+    
+      <div class="row">
+        <span class="text-light">
+          Smart Multifunctional Sports Arena
+        </span>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="row p-2">
+        <div class="col">
+          <div>
+            <span class="text-white">My Profile</span>
+          </div>
+        </div>
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="profileDrpdwn" id="dropdownForm1" ngbDropdownToggle></button>
+            <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+              <button ngbDropdownItem routerLink="/home">Home</button>
+              <button ngbDropdownItem routerLink="/profile">Review Profile</button>
+              <button ngbDropdownItem routerLink="/viewbookings">View Bookings</button>
+              <button ngbDropdownItem routerLink="/trainerappointments">Trainer Appointments</button>
+              <button ngbDropdownItem routerLink="/bookfacilities" *ngIf="authService.user.membershipStatus === 'staff'">Book Facilities</button>
+              <div class="dropdown-divider"></div>
+              <button ngbDropdownItem (click)="authService.logout()" routerLink="">Logout</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

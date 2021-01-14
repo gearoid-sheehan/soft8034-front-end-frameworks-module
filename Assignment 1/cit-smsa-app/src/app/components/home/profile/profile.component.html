@@ -1,0 +1,224 @@
+<div class="backgroundImg">
+     <div class="container-fluid">
+     <div class="container">
+     <div class="row itemsBlock justify-content-center">
+          <div class="col profileCard bg-light">
+               <div class="row profileCardHeader">
+                         <span class="container text-light h1 clubTitle" [innerHTML]='user.name'></span>
+                    </div>
+                    <div class="container">
+                         <div class="row">
+                                   <div class="col p-4">
+                                        <form #registerForm>
+                                             <div class="row">
+                                                  <div class="col">     
+                                                       <!-- First Name Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="name">Name</label>
+                                                            <input id="name" class="form-control" placeholder="Name" required type="text" [(ngModel)]="user.name" #name="ngModel" name="name" minlength="5" maxlength="20">
+                                                            <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                                                                 <div *ngIf="name.errors.required">Name is a required field</div>
+                                                                 <div *ngIf="name.errors.minlength">Name should be a minimum of 5 characters</div>
+                                                                 <div *ngIf="name.errors.maxlength">Name should be a maximum of 20 characters</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col">
+                                                       <!-- Gender Form Input -->
+                                                       <div class="form-group">
+                                                            <label>Gender</label>
+                                                            <div class="row p-2">
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="gender" value="male" [(ngModel)]="user.gender">
+                                                                      Male
+                                                                      </label>
+                                                                 </div>
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="gender" value="female" [(ngModel)]="user.gender">
+                                                                      Female
+                                                                      </label>
+                                                                 </div>
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="gender" value="other" [(ngModel)]="user.gender">
+                                                                      Other
+                                                                      </label>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col">
+                                                       <!-- Date of Birth Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="age">Age</label>
+                                                            <input id="age" class="form-control" placeholder="Age" required type="number" [(ngModel)]="user.age" #age="ngModel" name="age">
+                                                            <div class="alert alert-danger" *ngIf="age.touched && !age.valid">
+                                                                 <div *ngIf="age.errors.required">Age is a required field</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                             <div class="row">
+
+                                                  <div class="col">
+                                                       <!-- Weight Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="weight">Weight</label>
+                                                            <input id="weight" class="form-control" placeholder="Weight" required type="number" [(ngModel)]="user.weight" #weight="ngModel" name="weight">
+                                                            <div class="alert alert-danger" *ngIf="weight.touched && !weight.valid">
+                                                                 <div *ngIf="weight.errors.required">Weight is a required field</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col">               
+                                                       <!-- Height Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="height">Height</label>
+                                                            <input id="height" class="form-control" placeholder="Height" required type="number" [(ngModel)]="user.height" #height="ngModel" name="height">
+                                                            <div class="alert alert-danger" *ngIf="height.touched && !height.valid">
+                                                                 <div *ngIf="height.errors.required">Height is a required field</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col">
+                                                       <!-- Address Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="address">Address</label>
+                                                            <input id="address" class="form-control" placeholder="Address" required type="text" [(ngModel)]="user.address" #address="ngModel" name="address" minlength="15" maxlength="40">
+                                                            <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
+                                                                 <div *ngIf="address.errors.required">Address is a required field</div>
+                                                                 <div *ngIf="address.errors.minlength">Address should be a minimum of 15 characters</div>
+                                                                 <div *ngIf="address.errors.maxlength">Address should be a maximum of 40 characters</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                             <div class="row">
+
+                                                  <div class="col">
+                                                       <!-- Email Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="email">Email</label>
+                                                            <input id="email" class="form-control" placeholder="Email" required type="email" [(ngModel)]="user.email" #email="ngModel" name="email" minlength="5" maxlength="20">
+                                                            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                                                                 <div *ngIf="email.errors.required">Email is a required field</div>
+                                                                 <div *ngIf="email.errors.minlength">Email should be a minimum of 5 characters</div>
+                                                                 <div *ngIf="email.errors.maxlength">Email should be a maximum of 20 characters</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col">
+                                                       <!-- PhoneNumber Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="phoneNumber">Phone Number</label>
+                                                            <input id="phoneNumber" class="form-control" placeholder="Phone Number" required type="text" [(ngModel)]="user.phoneNumber" #phoneNumber="ngModel" name="phoneNumber" minlength="5" maxlength="20">
+                                                            <div class="alert alert-danger" *ngIf="phoneNumber.touched && !phoneNumber.valid">
+                                                                 <div *ngIf="phoneNumber.errors.required">Phone Number is a required field</div>
+                                                                 <div *ngIf="phoneNumber.errors.minlength">Phone Number should be a minimum of 5 characters</div>
+                                                                 <div *ngIf="phoneNumber.errors.maxlength">Phone Number should be a maximum of 20 characters</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col">
+                                                       <!-- Member Status Form Input -->
+                                                       <div class="form-group">
+                                                            <label>Membership Status</label>
+                                                            <div class="row p-2">
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="membershipStatus" value="student" [(ngModel)]="user.membershipStatus">
+                                                                      Student
+                                                                      </label>
+                                                                 </div>
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="membershipStatus" value="staff" [(ngModel)]="user.membershipStatus">
+                                                                      Staff
+                                                                      </label>
+                                                                 </div>
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="membershipStatus" value="neither" [(ngModel)]="user.membershipStatus">
+                                                                      Neither
+                                                                      </label>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                             <div class="row">
+
+                                                  <div class="col">
+                                                       <!-- Membership Type Form Input -->
+                                                       <div class="form-group">
+                                                            <label>Membership Type</label>
+                                                            <div class="row p-2">
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="membershipType" value="student" [(ngModel)]="user.membershipType">
+                                                                      One-Year
+                                                                      </label>
+                                                                 </div>
+                                                                 <div class="col">
+                                                                      <label class="radio-inline">
+                                                                      <input type="radio" name="membershipType" value="staff" [(ngModel)]="user.membershipType">
+                                                                      Open-Ended
+                                                                      </label>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col">
+                                                       <!-- Username Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="username">Username</label>
+                                                            <input id="username" class="form-control" placeholder="Username" required type="text" [(ngModel)]="user.username" #username="ngModel" name="username" minlength="5" maxlength="20">
+                                                            <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+                                                                 <div *ngIf="username.errors.required">Username is a required field</div>
+                                                                 <div *ngIf="username.errors.minlength">Username should be a minimum of 5 characters</div>
+                                                                 <div *ngIf="username.errors.maxlength">Username should be a maximum of 20 characters</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                                  <div class="col">
+                                                       <!-- Password Form Input -->
+                                                       <div class="form-group">
+                                                            <label for="password">Password</label>
+                                                            <input id="password" class="form-control" placeholder="Password" required type="password" [(ngModel)]="user.password" #password="ngModel" name="password" minlength="5" maxlength="20">
+                                                            <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                                                                 <div *ngIf="password.required">Password is a required field</div>
+                                                                 <div *ngIf="password.errors.minlength">Password should be a minimum of 5 characters</div>
+                                                                 <div *ngIf="password.errors.maxlength">Password should be a maximum of 20 characters</div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="row">
+                                                  <div class="col">
+                                                       <!-- Submit Registration Form -->
+                                                       <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-success" (click)="updateProfile()">Save</button>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </form>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

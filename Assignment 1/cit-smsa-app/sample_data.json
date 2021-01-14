@@ -1,0 +1,176 @@
+{
+    "users" : [
+        {
+            "name": "Gearoid Sheehan", 
+            "gender": "male", 
+            "age": 23, 
+            "weight": 0, 
+            "height": 0, 
+            "address": "Cork",
+            "email": "garsheehan@gmail.com", 
+            "phoneNumber": "0838251901", 
+            "membershipStatus": "Yearly", 
+            "membershipType": "",
+            "username": "gearoidsheehan", 
+            "password": "password", 
+            "isLoggedIn": false, 
+            "loginAttempts": 0, 
+            "isLockedOut": false,
+            "userId": 1
+        }
+    ],
+
+    "bookings" : [
+        {
+            "userId": 1,
+            "clubTitle": "Basketball",
+            "clubTime": "2:00",
+            "clubDate": "1/33/2332"
+        }
+    ],
+
+    "clubs": [
+        {
+            "id": 1, 
+            "title": "BasketBall", 
+            "img": "assets/images/basketball_stock_img.jpg",
+            "time": "14:00", 
+            "venue": "Neptune", 
+            "trainer": "Gearoid", 
+            "isFull": true, 
+            "length": 1, 
+            "caloriesBurned": 1500, 
+            "maxSize": 20
+        },
+        {
+            "id": 2, 
+            "title": "Soccer", 
+            "img": "assets/images/soccer_stock_img.jpg",
+            "time": "16:00",
+            "venue": "CIT Sports",
+            "trainer": "Gearoid",
+            "isFull": false,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {
+            "id": 3,
+            "title": "Baseball",
+            "img": "assets/images/baseball_stock_img.jpg", 
+            "time": "15:00", 
+            "venue": "Mardyke",
+            "trainer": "Shane", 
+            "isFull": true, 
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {   "id": 4,
+            "title": "Hockey",
+            "img": "assets/images/hockey_stock_img.jpg",
+            "time": "12:00", 
+            "venue": "CIT Gym",
+            "trainer": "Sean", 
+            "isFull": false,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {
+            "id": 5,
+            "title": "Swimming", 
+            "img": "assets/images/swimming_stock_img.jpg", 
+            "time": "12:00",
+            "venue": "Lesuire Centre", 
+            "trainer": "Diarmuid", 
+            "isFull": true,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {
+            "id": 6,
+            "title": "Squash",
+            "img": "assets/images/squash_stock_img.jpg",
+            "time": "10:00",
+            "venue": "CIT Gym",
+            "trainer": "Peter",
+            "isFull": true,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        },
+        {   "id": 7,
+            "title": "Tennis", 
+            "img": "assets/images/basketball_stock_img.jpg", 
+            "time": "14:00", 
+            "venue": "Neptune", 
+            "trainer": "Gearoid", 
+            "isFull": true,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        },
+        {
+            "id": 8,
+            "title": "Soccer", 
+            "img": "assets/images/soccer_stock_img.jpg",
+            "time": "16:00",
+            "venue": "CIT Sports",
+            "trainer": "Gearoid",
+            "isFull": false,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {
+            "id": 9,
+            "title": "Baseball",
+            "img": "assets/images/baseball_stock_img.jpg",
+            "time": "15:00",
+            "venue": "Mardyke", 
+            "trainer": "Shane",
+            "isFull": true,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {
+            "id": 10, 
+            "title": "Hockey",
+            "img": "assets/images/hockey_stock_img.jpg",
+            "time": "12:00",
+            "venue": "CIT Gym",
+            "trainer": "Sean", 
+            "isFull": false,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {
+            "id": 11,
+            "title": "Swimming",
+            "img": "assets/images/swimming_stock_img.jpg",
+            "time": "12:00",
+            "venue": "Lesuire Centre",
+            "trainer": "Diarmuid",
+            "isFull": true,
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }, 
+        {
+            "id": 12,
+            "title": "Squash",
+            "img": "assets/images/squash_stock_img.jpg",
+            "time": "10:00",
+            "venue": "CIT Gym",
+            "trainer": "Peter",
+            "isFull": true, 
+            "length": 1,
+            "caloriesBurned": 1500,
+            "maxSize": 20
+        }
+    ]
+}

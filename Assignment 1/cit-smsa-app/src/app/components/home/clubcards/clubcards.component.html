@@ -1,0 +1,96 @@
+<div class="container-fluid">
+     <div class="container-fluid itemsBlock">
+          <div class="container searchBox">
+               <div class="form-group">
+                    <input type="text" class="form-control w-25 m-3" placeholder="Search by Club name" [(ngModel)]="searchTitle"/>
+               </div>
+          </div>
+          <div class="row justify-content-center">
+               <div *ngFor="let club of clubs | clubFilter: searchTitle" class="col-sm-12 col-md-4 col-lg-3 m-3 bg-light clubcard">
+                    <div class="row clubcardHeader">
+                         <span class="container text-light clubTitle">{{club.title}}</span>
+                    </div>
+                    <div class="row innerContentCard">
+                         <div class="col">
+                              <img class="w-100 h-100 clubImg" src="{{club.img}}">
+                         </div>
+                         <div class="col">
+                              <div class="row">
+                                   <span><i class="fa fa-stopwatch"></i>{{club.time}}</span>
+                              </div>
+                              <div class="row">
+                                   <span><i class="fa fa-building"></i> {{club.venue}}</span>
+                              </div>
+                              <div class="row">
+                                   <span><i class="fa fa-user"></i> {{club.trainer}}</span>
+                              </div>
+                              <div class="row">
+                                   <span><i class="fa fa-times-circle"></i> {{club.isFull}}</span>
+                              </div>
+                              <div class="row">
+                                   <button type="button" class="btn btn-success" (click)="viewClub(content, club)">View Club</button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+<!-- Modal for registration, appears when register button is clicked on login page -->
+<ng-template #content let-modal class="rounded">
+<div class="container">
+     <div class="row outerModal">
+          <span class="container clubTitleModal">{{selectClub.title}}</span>
+     </div>
+   <div class="container">
+     <div class="row topRowModal">
+          <div class="col">
+               <img class="w-100 h-100 modalClubImg" src="{{selectClub.img}}">
+          </div>
+          <div class="col">
+               <div class="row">
+                    <span><i class="fa fa-hourglass-start icon"></i>Time: {{selectClub.time}}</span>
+               </div>
+               <div class="row">
+                    <span><i class="fa fa-building icon"></i>Location: {{selectClub.venue}}</span>
+               </div>
+               <div class="row">
+                    <span><i class="fa fa-user icon"></i>Trainer: {{selectClub.trainer}}</span>
+               </div>
+               <div class="row">
+                    <span><i class="fa fa-times-circle icon"></i>Maximum Size: {{selectClub.maxSize}}</span>
+               </div>
+               <div class="row">
+                    <span><i class="fa fa-times-circle icon"></i>Is the club full: {{selectClub.isFull}}</span>
+               </div>
+               <div class="row">
+                    <span><i class="fa fa-times-circle icon"></i>Length: {{selectClub.length}}</span>
+               </div>
+               <div class="row">
+                    <span><i class="fa fa-fire icon"></i>Calories Burned: {{selectClub.caloriesBurned}}</span>
+               </div>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col clubDescription">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+               when an unknown printer took a galley of type and scrambled it to make a type 
+               specimen book. It has survived not only five centuries, but also the leap into
+               electronic typesetting, remaining essentially unchanged. It was popularised in 
+               the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+               and more recently with desktop publishing software like Aldus PageMaker including 
+               versions of Lorem Ipsum.
+          </p>
+          </div>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col">
+          <button type="button" class="btn btn-success m-3 float-right" (click)="makeBooking()" (click)="modal.close('Book Club')">Book Club</button>
+     </div>
+   </div>
+</div>
+ </ng-template>

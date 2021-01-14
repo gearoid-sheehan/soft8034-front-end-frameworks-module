@@ -1,0 +1,36 @@
+<div class="backgroundImg">
+    <div class="container">
+            <div class="form-group test">
+                 <input type="text" class="form-control w-25 m-3" placeholder="Search by Club name or Date" [(ngModel)]="searchTitle"/>
+            </div>
+        <div class="container">
+            <div class="row itemsBlock justify-content-center">
+                <div class="col viewBookingsCard bg-light">
+                    <div class="row viewBookingsHeader">
+                        <span class="container text-light h1 clubTitle">Users Bookings</span>
+                    </div>
+                    <div class="container userBookingCont">
+                        <div class="row p-2">
+                            <div *ngFor="let booking of bookings | async | bookingFilter: searchTitle" class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="row viewBookingsCard justify-content-center">
+                                    <div class="col bookingsText">
+                                        <span class="font-weight-bold">Club Name: </span>{{booking.clubTitle}}
+                                    </div>
+                                    <div class="col bookingsText">
+                                        <span class="font-weight-bold">Time:</span> {{booking.clubTime}}
+                                    </div>
+                                    <div class="col bookingsText">
+                                        <span class="font-weight-bold">Date:</span> {{booking.clubDate}}
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-danger m-3 float-left" (click)="cancelBooking(booking)">Cancel Booking</button>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+            </div>
+        </div>
+    </div>
+</div>

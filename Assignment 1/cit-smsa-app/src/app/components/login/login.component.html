@@ -1,0 +1,277 @@
+<div class="backgroundImg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-6">
+                <div id="jumbotronLogin" class="jumbotron justify-content-center">
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
+                          <img id="logo" src="assets/images/CIT ICON 2012 (REVERSE RED-RGB).jpg"/>
+                        </div>
+                    
+                        <div class="col-sm-12 col-md-9 col-lg-9">
+                          <div class="row-sm-12 row-md-9 row-lg-9">
+                            <h1 class="text-light">
+                              SMSA
+                            </h1>
+                          </div>
+                          <div class="row-sm-12 row-md-9 row-lg-9">
+                            <span class="text-light">
+                              Smart Multifunctional Sports Arena
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                    <div id="innerContainer" class="container bg-white p-4">
+                        <h2>Login</h2>
+                        <form #loginForm="ngForm" (ngSubmit)="login()">
+                            <input type="email" class="form-control loginInput" name="email" placeholder="Email" required [(ngModel)]="userLogin.email" name="email" >
+                            <input type="password" class="form-control loginInput" name="password" placeholder="Password" required [(ngModel)]="userLogin.password">
+                            <hr>
+                            <div class="row justify-content-center">
+                                <button [disabled]="!loginForm.valid" type="submit" class="btn btn-success loginBtn" >Login</button>
+                            </div>
+                        </form>
+                        <div class="row links">
+                            <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                                <a class="justify-content-center" (click)="forgotPasswordModal(content1)">Forgot Password?</a>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                                <a class="justify-content-center" (click)="registerModal(content2)">Register for Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Password Reset, appears when forgot password button is clicked on login page -->
+<ng-template #content1 let-modal>
+  <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Reset Password</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+      <form #registerForm>
+          <div class="form-group">
+
+              <!-- Email Form Input -->
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input id="email" class="form-control" placeholder="Email" required type="email" [(ngModel)]="userForgotPassword.email" #email="ngModel" name="email" minlength="5" maxlength="100">
+                  <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                      <div *ngIf="email.errors.required">Email is a required field</div>
+                      <div *ngIf="email.errors.minlength">Email should be a minimum of 5 characters</div>
+                      <div *ngIf="email.errors.maxlength">Email should be a maximum of 100 characters</div>
+                  </div>
+              </div>
+
+              <!-- Password Form Input -->
+              <div class="form-group">
+                  <label for="password">New Password</label>
+                  <input id="password" class="form-control" placeholder="Password" required type="password" [(ngModel)]="userForgotPassword.password" #password="ngModel" name="password" minlength="5" maxlength="40">
+                  <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                      <div *ngIf="password.errors.required">Password is a required field</div>
+                      <div *ngIf="password.errors.minlength">Password should be a minimum of 5 characters</div>
+                      <div *ngIf="password.errors.maxlength">Password should be a maximum of 20 characters</div>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- Submit Registration Form -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" (click)="forgotPassword()" (click)="modal.close('Reset click')">Reset</button>
+        </div>
+      </form>
+  </div>
+</ng-template>
+
+<!-- Modal for registration, appears when register button is clicked on login page -->
+<ng-template #content2 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Register for Membership</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #registerForm>
+            <div class="form-group">
+
+                <!-- First Name Form Input -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input id="name" class="form-control" placeholder="Name" required type="text" [(ngModel)]="userRegister.name" #name="ngModel" name="name" minlength="5" maxlength="100">
+                    <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                        <div *ngIf="name.errors.required">Name is a required field</div>
+                        <div *ngIf="name.errors.minlength">Name should be a minimum of 5 characters</div>
+                        <div *ngIf="name.errors.maxlength">Name should be a maximum of 100 characters</div>
+                    </div>
+                </div>
+                
+                <!-- Gender Form Input -->
+                <div class="form-group">
+                  <label>Gender</label>
+                  <div class="row">
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="gender" value="male" [(ngModel)]="userRegister.gender">
+                            Male
+                            </label>
+                       </div>
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="gender" value="female" [(ngModel)]="userRegister.gender">
+                            Female
+                            </label>
+                       </div>
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="gender" value="other" [(ngModel)]="userRegister.gender">
+                            Other
+                            </label>
+                       </div>
+                  </div>
+             </div>
+
+                <!-- Date of Birth Form Input -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input id="age" class="form-control" placeholder="Age" required type="number" [(ngModel)]="userRegister.age" #age="ngModel" name="age">
+                    <div class="alert alert-danger" *ngIf="age.touched && !age.valid">
+                        <div *ngIf="age.errors.required">Age is a required field</div>
+                    </div>
+                </div>
+
+                <!-- Weight Form Input -->
+                <div class="form-group">
+                    <label for="weight">Weight</label>
+                    <input id="weight" class="form-control" placeholder="Weight" required type="number" [(ngModel)]="userRegister.weight" #weight="ngModel" name="weight">
+                    <div class="alert alert-danger" *ngIf="weight.touched && !weight.valid">
+                        <div *ngIf="weight.errors.required">Weight is a required field</div>
+                    </div>
+                </div>
+
+                <!-- Height Form Input -->
+                <div class="form-group">
+                    <label for="height">Height</label>
+                    <input id="height" class="form-control" placeholder="Height" required type="number" [(ngModel)]="userRegister.height" #height="ngModel" name="height">
+                    <div class="alert alert-danger" *ngIf="height.touched && !height.valid">
+                        <div *ngIf="height.errors.required">Height is a required field</div>
+                    </div>
+                </div>
+
+                <!-- Address Form Input -->
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input id="address" class="form-control" placeholder="Address" required type="text" [(ngModel)]="userRegister.address" #address="ngModel" name="address" minlength="15" maxlength="40">
+                    <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
+                        <div *ngIf="address.errors.required">Address is a required field</div>
+                        <div *ngIf="address.errors.minlength">Address should be a minimum of 15 characters</div>
+                        <div *ngIf="address.errors.maxlength">Address should be a maximum of 40 characters</div>
+                    </div>
+                </div>
+
+                <!-- Email Form Input -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" class="form-control" placeholder="Email" required type="email" [(ngModel)]="userRegister.email" #email="ngModel" name="email" minlength="5" maxlength="100">
+                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                        <div *ngIf="email.errors.required">Email is a required field</div>
+                        <div *ngIf="email.errors.minlength">Email should be a minimum of 5 characters</div>
+                        <div *ngIf="email.errors.maxlength">Email should be a maximum of 100 characters</div>
+                    </div>
+                </div>
+
+                <!-- PhoneNumber Form Input -->
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input id="phoneNumber" class="form-control" placeholder="Phone Number" required type="text" [(ngModel)]="userRegister.phoneNumber" #phoneNumber="ngModel" name="phoneNumber" minlength="5" maxlength="20">
+                    <div class="alert alert-danger" *ngIf="phoneNumber.touched && !phoneNumber.valid">
+                        <div *ngIf="phoneNumber.errors.required">Phone Number is a required field</div>
+                        <div *ngIf="phoneNumber.errors.minlength">Phone Number should be a minimum of 5 characters</div>
+                        <div *ngIf="phoneNumber.errors.maxlength">Phone Number should be a maximum of 20 characters</div>
+                    </div>
+                </div>
+
+                <!-- Member Status Form Input -->
+                <div class="form-group">
+                  <label>Membership Status</label>
+                  <div class="row p-2">
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="membershipStatus" value="student" [(ngModel)]="userRegister.membershipStatus">
+                            Student
+                            </label>
+                       </div>
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="membershipStatus" value="staff" [(ngModel)]="userRegisterembershipStatus">
+                            Staff
+                            </label>
+                       </div>
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="membershipStatus" value="neither" [(ngModel)]="userRegister.membershipStatus">
+                            Neither
+                            </label>
+                       </div>
+                  </div>
+             </div>
+
+                <!-- Membership Type Form Input -->
+                <div class="form-group">
+                  <label>Membership Type</label>
+                  <div class="row p-2">
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="membershipType" value="student" [(ngModel)]="userRegister.membershipType">
+                            One-Year
+                            </label>
+                       </div>
+                       <div class="col">
+                            <label class="radio-inline">
+                            <input type="radio" name="membershipType" value="staff" [(ngModel)]="userRegister.membershipType">
+                            Open-Ended
+                            </label>
+                       </div>
+                  </div>
+             </div>
+
+                <!-- Username Form Input -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" class="form-control" placeholder="Username" required type="text" [(ngModel)]="userRegister.username" #username="ngModel" name="username" minlength="5" maxlength="20">
+                    <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+                        <div *ngIf="username.errors.required">Username is a required field</div>
+                        <div *ngIf="username.errors.minlength">Username should be a minimum of 5 characters</div>
+                        <div *ngIf="username.errors.maxlength">Username should be a maximum of 20 characters</div>
+                    </div>
+                </div>
+
+                <!-- Password Form Input -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" class="form-control" placeholder="Password" required type="password" [(ngModel)]="userRegister.password" #password="ngModel" name="password" minlength="5" maxlength="20">
+                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                        <div *ngIf="password.errors.required">Password is a required field</div>
+                        <div *ngIf="password.errors.minlength">Password should be a minimum of 5 characters</div>
+                        <div *ngIf="password.errors.maxlength">Password should be a maximum of 20 characters</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Submit Registration Form -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success" (click)="register()" (click)="modal.close('Save click')">Save</button>
+          </div>
+        </form>
+    </div>
+</ng-template>

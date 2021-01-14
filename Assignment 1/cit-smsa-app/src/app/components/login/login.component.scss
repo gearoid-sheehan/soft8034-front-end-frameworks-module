@@ -1,0 +1,49 @@
+.backgroundImg {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backgroundImg::before {    
+    content: "";
+    background-image: url('/assets/images/cit-sports-hall.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+}
+
+#jumbotronLogin {
+    background-color: #D31145;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#logo {
+    height: 80px;
+    width: 80px;
+}
+
+#innerContainer {
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.loginInput {
+    margin-top: 20px
+}
+
+.loginBtn {
+    width: 400px;
+    border-radius: 20px;
+}
+
+.links {
+    margin-top: 20px;
+}
